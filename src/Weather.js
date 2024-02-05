@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function getForecast(event) {
-    
+export default function getForecast() {
 }
 
 let apiKey = "0f605ca33b8d413fa995ab3t060267od";
