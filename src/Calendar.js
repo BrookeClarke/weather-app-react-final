@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState }  from "react";
 
 export default function Calendar(props) {
     let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
