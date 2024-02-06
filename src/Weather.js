@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Calendar from "./Calendar";
 
-export default function getForecast() {
+export default function Weather(props) {
+    let [temperature, setTemperature] = useState(null);
+    function showForecast(response) {
+        setTemperature(response.data.main.temp);
+    }
+
+    let apiKey = "0f605ca33b8d413fa995ab3t060267od";
+    let apiUrl = 'https://api.shecodes.io/weather/v1/current?query={props.city}&key=${apiKey}&units=metric';
+
+    axios.get(apiUrl).then(showForecast);
+
+    if (temperature) {
+        return (
+            <p>The weather in {props.city} is {Math.round(temperature)}°C</p>
+        )
+    } else {
+        return <p>Loading</p>;
+    }
 }
-
-let apiKey = "0f605ca33b8d413fa995ab3t060267od";
-let apiUrl = 'https://api.shecodes.io/weather/v1/current?query={query}&key=${apiKey}&units=metric';
-
-axios.get(apiUrl).then(getForecast);
