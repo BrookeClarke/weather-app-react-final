@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
 import Weather from "./Weather";
-import Calendar from './Calendar';
 
 
 function App() {
