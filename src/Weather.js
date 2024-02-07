@@ -11,12 +11,4 @@ export default function Weather() {
     let apiUrl = 'https://api.shecodes.io/weather/v1/current?query={props.city}&key=${apiKey}';
 
     axios.get(apiUrl).then(showForecast);
-
-    if (temperature) {
-        return (
-            <p>The weather in {props.city} is {Math.round(temperature)}°C</p>
-        )
-    } else {
-        return <p>Loading</p>;
-    }
 }
