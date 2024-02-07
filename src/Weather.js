@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function Weather() {
     function showForecast(response) {
+        console.log(response.data);
     }
 
     let apiKey = "0f605ca33b8d413fa995ab3t060267od";
