@@ -8,7 +8,12 @@ export default function Forecast() {
             <form className="searchbutton" id="search-form">
                 <input className="city-search" placeholder="Enter a place..." autocomplete="off" autofocus="on" />
                 <input className="search-submit" type="submit" value="search" />
+                <h2 className="date">Date</h2>
+                <h3>Search for a place</h3>
             </form>
+            <div className="container">
+
+            </div>
         </div>
     )
 }
