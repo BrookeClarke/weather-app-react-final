@@ -7,7 +7,7 @@ export default function Weather(props) {
     }
     console.log(props);
     let apiKey = "0f605ca33b8d413fa995ab3t060267od";
-    let apiUrl = 'https://api.shecodes.io/weather/v1/current?query={query}&key=${apiKey}';
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=paris&key=${apiKey}`;
 
     axios.get(apiUrl).then(showForecast);
 }
