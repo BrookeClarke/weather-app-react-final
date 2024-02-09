@@ -3,6 +3,18 @@ h1 {
     margin: 15px;
 }
 
-.searchbutton {
+.search {
     text-align: center;
+}
+.city-search {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+.search-submit {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
 }
