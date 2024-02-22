@@ -1,17 +1,24 @@
 h1 {
     text-align: center;
     margin: 15px;
+    color: #292929;;
+}
+
+.html {
+    color: #292929;
 }
 
 .search {
     text-align: center;
 }
+
 .city-search {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
     font-size: 18px;
 }
+
 .search-submit {
     border: 1px solid black;
     border-radius: 5px;
@@ -19,16 +26,21 @@ h1 {
     font-size: 18px;
     background-color: rgb(24, 89, 220);
 }
-.weather {
 
+.weather {
+    background-color: #dce2d3;
     display: block;
     margin: 30px auto;
 
 }
+
 .container {
-        border: 1px solid gray;
-        border-radius: 15px;
+    background-color: #c0cab4;
+    color: #292929;
+    border: 1px solid gray;
+    border-radius: 15px;
 }
+
 ul {
-    text-decoration: none;
+    list-style: none;
 }
