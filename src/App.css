@@ -29,3 +29,6 @@ h1 {
         border: 1px solid gray;
         border-radius: 15px;
 }
+ul {
+    text-decoration: none;
+}
