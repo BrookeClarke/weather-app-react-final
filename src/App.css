@@ -20,8 +20,12 @@ h1 {
     background-color: rgb(24, 89, 220);
 }
 .container {
-    border: 1px solid gray;
+
     display: block;
     margin: 30px auto;
-    border-radius: 15px;
+
+}
+.forecast-information {
+        border: 1px solid gray;
+        border-radius: 15px;
 }
