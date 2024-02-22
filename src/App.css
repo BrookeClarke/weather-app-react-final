@@ -19,13 +19,13 @@ h1 {
     font-size: 18px;
     background-color: rgb(24, 89, 220);
 }
-.container {
+.weather {
 
     display: block;
     margin: 30px auto;
 
 }
-.forecast-information {
+.container {
         border: 1px solid gray;
         border-radius: 15px;
 }
