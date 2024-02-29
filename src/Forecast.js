@@ -10,7 +10,7 @@ export default function Forecast() {
                 <h1>Todays Weather</h1>
                 <div className="search">
                     <form className="searchbutton" id="search-form">
-                        <input className="city-search" type="search" placeholder="Enter a place..." autocomplete="off" autofocus="on" />
+                        <input className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
@@ -26,7 +26,6 @@ export default function Forecast() {
                     </div>
                     <div className="col-6">
                         <ul>
-                            <li>Precipitation: 15%</li>
                             <li>Humidity: 72%</li>
                             <li>Wind: 13km/h</li>
                         </ul>

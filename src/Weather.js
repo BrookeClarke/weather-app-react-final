@@ -9,11 +9,11 @@ export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({});
 
     function handleResponse(response) {
+        console.log(response.data);
         setWeatherData({
             city: response.data.name,
-            temperature: response.data.main.temp,
-            description: "Mostly Cloudy",
-            precipitation: 20,
+            temperature: response.data.main.temperature.current,
+            description: response.data.main.description,
             humidity: 73,
             wind: 14,
         })
@@ -26,7 +26,7 @@ export default function Weather(props) {
                 <h1>Todays Weather</h1>
                 <div className="search">
                     <form className="searchbutton" id="search-form">
-                        <input className="city-search" type="search" placeholder="Enter a place..." autocomplete="off" autofocus="on" />
+                        <input className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
@@ -42,9 +42,8 @@ export default function Weather(props) {
                     </div>
                     <div className="col-6">
                         <ul>
-                            <li>{weatherData.precipitation}%</li>
-                            <li>{weatherData.humidity}%</li>
-                                    <li>{weatherData.wind}km/h</li>
+                                <li>{weatherData.humidity}%</li>
+                                <li>{weatherData.wind}km/h</li>
                         </ul>
                     </div>
                 </div>
