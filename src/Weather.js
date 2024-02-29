@@ -2,24 +2,29 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Weather(props) {
-    const apiKey = "0f605ca33b8d413fa995ab3t060267od";
-    let city = "London";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    const [ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+    const [weatherData, setWeatherData] = useState({ ready: false});
 
     function handleResponse(response) {
         console.log(response.data);
         setWeatherData({
+            ready: true,
             city: response.data.name,
             temperature: response.data.main.temperature.current,
-            description: response.data.main.description,
-            humidity: 73,
-            wind: 14,
+            description: response.data.main.condition.description,
+            humidity: response.data.main.temperature.humidity,
+            wind: response.data.main.temperature.wind.speed,
+            iconUrl: response.data.main.condition.icon_url,
         })
     }
 
-    if (ready) {
+    function search() {
+        const apiKey = "0f605ca33b8d413fa995ab3t060267od";
+        let city = "London";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+    }
+
+    if (weatherData.ready) {
         return (
             <div className="html">
             <div className="container">
@@ -33,12 +38,12 @@ export default function Weather(props) {
                     <h2 className="date">Thursday 22nd February 2024 21:45pm</h2>
                     <ul>
                         <li>{weatherData.city}</li>
-                        <li>{weatherData.description}</li>
+                        <li className="text-capitalize">{weatherData.description}</li>
                     </ul>
                 <div className="row">
                     <div className="col-6">
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" alt="Mostly Cloudy Weather Icon" />
-                        <h4>6°C</h4>
+                        <img src={weatherData.iconUrl} alt={weatherData.description} />
+                            <h4>{weatherData.temperature}</h4>
                     </div>
                     <div className="col-6">
                         <ul>
@@ -50,6 +55,9 @@ export default function Weather(props) {
             </div>
         </div>
         )
+    } else {
+        search();
+        return "Loading..."
     }
-    axios.get(apiUrl).then(handleResponse);
+
 }
