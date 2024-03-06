@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] = useState({ ready: false});
+    const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse(response) {
         console.log(response.data);
@@ -21,9 +23,17 @@ export default function Weather(props) {
 
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
-        let city = "London";
         let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search(city);
+    }
+
+    function handleCityChange(event) {
+        setCity(event.target.value);
     }
 
     if (weatherData.ready) {
@@ -32,11 +42,12 @@ export default function Weather(props) {
             <div className="container">
                 <h1>Todays Weather</h1>
                 <div className="search">
-                    <form className="searchbutton" id="search-form">
-                        <input className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
+                        <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
+                        <input onChange={handleCityChange} className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                     </div>
+                    <WeatherInfo data={weatherData} />
                     <FormattedDate date={weatherData.date} />
                     <ul>
                         <li>{weatherData.city}</li>
