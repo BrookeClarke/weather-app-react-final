@@ -16,7 +16,7 @@ export default function Forecast() {
                     </form>
                 </div>
                 <Weather />
-                <FormattedDate />
+                <FormattedDate date={new Date()} />
                 <ul>
                     <li>London</li>
                     <li>Mostly Cloudy</li>
@@ -35,5 +35,5 @@ export default function Forecast() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

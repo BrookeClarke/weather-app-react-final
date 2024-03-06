@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 
@@ -9,20 +9,20 @@ export default function Weather(props) {
         console.log(response.data);
         setWeatherData({
             ready: true,
-            city: response.data.name,
-            date: new Date(response.data.time * 1000),
-            temperature: response.data.main.temperature.current,
-            description: response.data.main.condition.description,
-            humidity: response.data.main.temperature.humidity,
-            wind: response.data.main.temperature.wind.speed,
-            iconUrl: response.data.main.condition.icon_url,
+            city: response.data.city,
+            date: new Date(response.data.daily[0].time * 1000),
+            temperature: response.data.daily[0].temperature.current,
+            description: response.data.daily[0].condition.description,
+            humidity: response.data.daily[0].temperature.humidity,
+            wind: response.data.daily[0].temperature.wind,
+            iconUrl: response.data.daily[0].condition.icon_url,
         })
     }
 
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
         let city = "London";
-        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}}&units=metric`;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
 
@@ -36,7 +36,7 @@ export default function Weather(props) {
                         <input className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
                         <input className="search-submit" type="submit" value="search" />
                     </form>
-                </div>
+                    </div>
                     <FormattedDate date={weatherData.date} />
                     <ul>
                         <li>{weatherData.city}</li>
@@ -48,18 +48,17 @@ export default function Weather(props) {
                             <h4>{weatherData.temperature}</h4>
                     </div>
                     <div className="col-6">
-                        <ul>
+                            <ul>
                                 <li>{weatherData.humidity}%</li>
                                 <li>{weatherData.wind}km/h</li>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         )
     } else {
         search();
         return "Loading..."
     }
-
 }
