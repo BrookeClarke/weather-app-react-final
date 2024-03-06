@@ -3,15 +3,7 @@ import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
     return (
-        <div className="html">
-            <div className="container">
-                <h1>Todays Weather</h1>
-                <div className="search">
-                    <form className="searchbutton" id="search-form">
-                        <input className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
-                        <input className="search-submit" type="submit" value="search" />
-                    </form>
-                </div>
+        <div className="WeatherInfo">
                 <FormattedDate date={props.data.date} />
                 <ul>
                     <li>{props.data.city}</li>
@@ -30,6 +22,5 @@ export default function WeatherInfo(props) {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }

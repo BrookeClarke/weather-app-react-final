@@ -39,35 +39,19 @@ export default function Weather(props) {
     if (weatherData.ready) {
         return (
             <div className="html">
-            <div className="container">
-                <h1>Todays Weather</h1>
-                <div className="search">
+                <div className="container">
+                    <h1>Todays Weather</h1>
+                    <div className="search">
                         <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
-                        <input onChange={handleCityChange} className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
-                        <input className="search-submit" type="submit" value="search" />
-                    </form>
+                            <input onChange={handleCityChange} className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
+                            <input className="search-submit" type="submit" value="search" />
+                        </form>
                     </div>
                     <WeatherInfo data={weatherData} />
                     <FormattedDate date={weatherData.date} />
-                    <ul>
-                        <li>{weatherData.city}</li>
-                        <li className="text-capitalize">{weatherData.description}</li>
-                    </ul>
-                <div className="row">
-                    <div className="col-6">
-                        <img src={weatherData.iconUrl} alt={weatherData.description} />
-                            <h4>{weatherData.temperature}</h4>
-                    </div>
-                    <div className="col-6">
-                            <ul>
-                                <li>{weatherData.humidity}%</li>
-                                <li>{weatherData.wind}km/h</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
-        )
+        );
     } else {
         search();
         return "Loading..."
