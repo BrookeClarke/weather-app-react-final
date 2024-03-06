@@ -15,7 +15,8 @@ export default function Forecast() {
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
-                <FormattedDate date={weatherData.date} />
+                <Weather />
+                <FormattedDate />
                 <ul>
                     <li>London</li>
                     <li>Mostly Cloudy</li>
