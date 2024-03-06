@@ -9,6 +9,7 @@ export default function Weather(props) {
         setWeatherData({
             ready: true,
             city: response.data.name,
+            date: "Thursday 22nd February 2024 21:45pm",
             temperature: response.data.main.temperature.current,
             description: response.data.main.condition.description,
             humidity: response.data.main.temperature.humidity,
@@ -35,7 +36,7 @@ export default function Weather(props) {
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
-                    <h2 className="date">Thursday 22nd February 2024 21:45pm</h2>
+                    <h2 className="date">{weatherData.date}</h2>
                     <ul>
                         <li>{weatherData.city}</li>
                         <li className="text-capitalize">{weatherData.description}</li>
