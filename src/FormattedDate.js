@@ -3,8 +3,8 @@ import React from "react";
 export default function FormattedDate(props) {
     let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let day = days[props.date.getDay()];
-    let hour = props.date.getHours();
-    let minutes = props.date.getMinites();
+    let hour = props.date.getHour();
+    let minutes = props.date.getMinutes();
     let month = props.date.getMonth();
     let year = props.date.getYear();
     if (hour < 10) {
@@ -14,7 +14,9 @@ export default function FormattedDate(props) {
         minutes = `0${minutes}`;
     }
 
-    return <div>
-        {day} {hour}:{minutes} {month} {year}
-    </div>;
+    return (
+        <div>
+        ${day} ${hour}:${minutes} ${month} ${year}
+        </div>
+    )
 }
