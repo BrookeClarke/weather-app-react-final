@@ -22,7 +22,7 @@ export default function Weather(props) {
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
         let city = "London";
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={apiKey}&units=metric`;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
 
