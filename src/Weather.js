@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false});
@@ -9,7 +10,7 @@ export default function Weather(props) {
         setWeatherData({
             ready: true,
             city: response.data.name,
-            date: "Thursday 22nd February 2024 21:45pm",
+            date: new Date(response.data.time * 1000),
             temperature: response.data.main.temperature.current,
             description: response.data.main.condition.description,
             humidity: response.data.main.temperature.humidity,
@@ -21,7 +22,7 @@ export default function Weather(props) {
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
         let city = "London";
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
 
@@ -36,7 +37,7 @@ export default function Weather(props) {
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
-                    <h2 className="date">{weatherData.date}</h2>
+                    <FormattedDate date={weatherData.date} />
                     <ul>
                         <li>{weatherData.city}</li>
                         <li className="text-capitalize">{weatherData.description}</li>

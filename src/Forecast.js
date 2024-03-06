@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Weather from "./Weather";
+import FormattedDate from "./FormattedDate";
 
 
 export default function Forecast() {
@@ -14,7 +15,7 @@ export default function Forecast() {
                         <input className="search-submit" type="submit" value="search" />
                     </form>
                 </div>
-                <h2 className="date">Thursday 22nd February 2024 21:45pm</h2>
+                <FormattedDate date={weatherData.date} />
                 <ul>
                     <li>London</li>
                     <li>Mostly Cloudy</li>
