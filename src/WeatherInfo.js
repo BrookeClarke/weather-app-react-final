@@ -13,9 +13,9 @@ export default function WeatherInfo(props) {
                 <div className="col-6">
                     <div className="d-flex">
                         <img src={props.data.iconUrl} alt={props.data.description} />
-                        <span className="celius">
-                            <h4 className="Temperature">{Math.round(props.data.temperature)}</h4>
-                            °C</span>
+                        <div className="celsius">
+                            <span className="Temperature">{Math.round(props.data.temperature)}</span>
+                            °C</div>
                     </div>
                 </div>
                 <div className="col-6">
