@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import "./App.css";
 
 export default function WeatherInfo(props) {
     return (
@@ -26,6 +27,66 @@ export default function WeatherInfo(props) {
                     </ul>
                 </div>
             </div>
+            <div className="forecast">
+                <div className="row">
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                    <div className="col">
+                        <h4 className="forecast-day">Thurs</h4>
+                        <img src={props.data.iconUrl} alt={props.data.description} />
+                        <h4 className="forecast-temperatures">
+                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-minimum">10°C</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-} 
+}

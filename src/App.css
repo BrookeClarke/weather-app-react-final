@@ -44,3 +44,22 @@ h1 {
 ul {
     list-style: none;
 }
+
+.forecast {
+    text-align: center;
+}
+
+.temperature-maximum {
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.temperature-minimum {
+    opacity: 0.6;
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+.forecast-day {
+    font-size: 18px;
+}
