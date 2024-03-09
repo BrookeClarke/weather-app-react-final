@@ -33,7 +33,7 @@ export default function WeatherInfo(props) {
                         <h4 className="forecast-day">Thurs</h4>
                         <img src={props.data.iconUrl} alt={props.data.description} />
                         <h4 className="forecast-temperatures">
-                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-maximum"></span>
                             <span className="temperature-minimum">10°C</span>
                         </h4>
                     </div>
@@ -41,7 +41,7 @@ export default function WeatherInfo(props) {
                         <h4 className="forecast-day">Thurs</h4>
                         <img src={props.data.iconUrl} alt={props.data.description} />
                         <h4 className="forecast-temperatures">
-                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-maximum"></span>
                             <span className="temperature-minimum">10°C</span>
                         </h4>
                     </div>
@@ -49,7 +49,7 @@ export default function WeatherInfo(props) {
                         <h4 className="forecast-day">Thurs</h4>
                         <img src={props.data.iconUrl} alt={props.data.description} />
                         <h4 className="forecast-temperatures">
-                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-maximum"></span>
                             <span className="temperature-minimum">10°C</span>
                         </h4>
                     </div>
@@ -57,7 +57,7 @@ export default function WeatherInfo(props) {
                         <h4 className="forecast-day">Thurs</h4>
                         <img src={props.data.iconUrl} alt={props.data.description} />
                         <h4 className="forecast-temperatures">
-                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-maximum"></span>
                             <span className="temperature-minimum">10°C</span>
                         </h4>
                     </div>
@@ -65,7 +65,7 @@ export default function WeatherInfo(props) {
                         <h4 className="forecast-day">Thurs</h4>
                         <img src={props.data.iconUrl} alt={props.data.description} />
                         <h4 className="forecast-temperatures">
-                            <span className="temperature-maximum">19°C</span>
+                            <span className="temperature-maximum"></span>
                             <span className="temperature-minimum">10°C</span>
                         </h4>
                     </div>

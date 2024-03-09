@@ -19,6 +19,8 @@ export default function Weather(props) {
             humidity: response.data.daily[0].temperature.humidity,
             wind: response.data.daily[0].wind.speed,
             iconUrl: response.data.daily[0].condition.icon_url,
+            temperatureMaximum: response.data.daily[0].temperature.maximum,
+            temperatureMinimum: response.data.daily[0].temperature.minimum,
         })
     }
 
