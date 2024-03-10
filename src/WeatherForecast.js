@@ -1,20 +1,18 @@
 import React from "react";
-import WeatherInfo from "./WeatherInfo.js";
-import WeatherForecastData from "./WeatherForecastData.js";
 
 export default function WeatherForecast(props) {
     function maxTemperature() {
-        let temperature = Math.round(props.data.temperature.maximum);
-        return `${temperature}°C`;
+        let temperatureMax = Math.round(props.data.temperature.maximum);
+        return `${temperatureMax}°C`;
     }
 
     function minTemperature() {
-        let temperature = Math.round(props.data.temperature.minimum);
-        return `${temperature}°C`;
+        let temperatureMin = Math.round(props.data.temperature.minimum);
+        return `${temperatureMin}°C`;
     }
 
-    function forecastDay(timestamp) {
-        let date = new Date(timestamp * 1000);
+    function forecastDay() {
+        let date = new Date(props.data.time * 1000);
         let day = date.getDay();
         let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 
@@ -27,7 +25,7 @@ export default function WeatherForecast(props) {
             <div className="row">
                 <div className="col">
                     <h4 className="forecast-day">{forecastDay()}</h4>
-                    <WeatherInfo code={props.data.weather[0].icon} size={36} />
+                    <img src={props.data.iconUrl} alt={props.data.description} />
                     <h4 className="forecast-temperatures">
                         <span className="temperature-maximum">{maxTemperature()}</span>
                         <span className="temperature-minimum">{minTemperature()}</span>
