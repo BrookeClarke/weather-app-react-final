@@ -13,6 +13,7 @@ export default function WeatherForecastData(props) {
     }
     
     if (loaded) {
+        console.log(forecast);
         return (
             <div className="WeatherForecast">
                 <div className="row">
@@ -22,7 +23,6 @@ export default function WeatherForecastData(props) {
                 </div>
             </div>
         );
-
     } else {
         let longitude = props.coordinates.longitude;
         let latitude = props.coordinates.latitude;
