@@ -1,39 +1,29 @@
-import React from "react";
-import Weather from "./Weather";
+import React, {useState} from "react";
 import WeatherForecast from "./WeatherForecast";
-import WeatherInfo from "./WeatherInfo";
-import WeatherTemperature from "./WeatherTemperature";
 import "./App.css";
+import axios from "axios";
 
 export default function WeatherForecast(props) {
     let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState(null)
+    let [forecast, setForecast] = useState(null);
 
     function handleResponse(response) {
         setForecast(response.data.daily);
         setLoaded(true);
     }
-}
+    
+    if (loaded) {
+        return (
+            <div></div>
+        );
 
-if (loaded) {
-    return (
-        <div className="html">
-            <div className="container">
-                <h1>Todays Weather</h1>
-                <div className="search">
-                    <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
-                        <input onChange={handleCityChange} className="city-search" type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
-                        <input className="search-submit" type="submit" value="search" />
-                    </form>
-                </div>
-                <WeatherInfo data={weatherData} />
-                <WeatherForecast data={forecast[0]} />
-            </div>
-        </div>
-    );
-} else {
-    console.log(response)
-    search();
-
-    axios.get(apiUrl).then(handleResponse);
+    } else {
+        const apiKey = "0f605ca33b8d413fa995ab3t060267od";
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+        let longitude = props.coordinates.longitude;
+        let latitude = props.coordinates.latitude;
+        axios.get(apiUrl).then(handleResponse);
+        
+        return null;
+    }
 }
