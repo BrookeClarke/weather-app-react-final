@@ -3,9 +3,10 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import "./App.css";
+import WeatherForecast from "./WeatherForecast";
+import WeatherForecastData from "./WeatherForecastData";
 
 export default function Weather(props) {
-    
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
 
@@ -20,8 +21,6 @@ export default function Weather(props) {
             humidity: response.data.daily[0].temperature.humidity,
             wind: response.data.daily[0].wind.speed,
             iconUrl: response.data.daily[0].condition.icon_url,
-            temperatureMaximum: response.data.daily[0].temperature.maximum,
-            temperatureMinimum: response.data.daily[0].temperature.minimum,
             longitude: response.data.coordinates.longitude,
             latitude: response.data.coordinates.latitude,
         })
@@ -32,20 +31,17 @@ export default function Weather(props) {
         let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${weatherData.longitude}&lat=${weatherData.latitude}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
-    
-    function WeatherForecast(props) {
-        let [loaded, setLoaded] = useState(false);
-        let [forecast, setForecast] = useState(null)
 
-        function handleResponse(response) {
-            setForecast(response.data.daily);
-            setLoaded(true);
-        }
+    function handleSubmit(event) {
+        event.preventDefault();
+        search(city);
     }
 
-    if (loaded) {
-        
+    function handleCityChange(event) {
+        setCity(event.target.value);
+    }
 
+    if (weatherData.ready) {
         return (
             <div className="html">
                 <div className="container">
@@ -57,22 +53,17 @@ export default function Weather(props) {
                         </form>
                     </div>
                     <WeatherInfo data={weatherData} />
+                    <WeatherForecast data={forecast[0]} />
                 </div>
             </div>
         );
     } else {
         console.log(response)
         search();
-
+    
         axios.get(apiUrl).then(handleResponse);
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        search(city);
-    }
-
-    function handleCityChange(event) {
-        setCity(event.target.value);
+    } else {
+        search()
+        return "Loading weather data..."
     }
 }
