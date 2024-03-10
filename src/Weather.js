@@ -22,25 +22,30 @@ export default function Weather(props) {
             iconUrl: response.data.daily[0].condition.icon_url,
             temperatureMaximum: response.data.daily[0].temperature.maximum,
             temperatureMinimum: response.data.daily[0].temperature.minimum,
+            longitude: response.data.coordinates.longitude,
+            latitude: response.data.coordinates.latitude,
         })
     }
 
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
-        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${weatherData.longitude}&lat=${weatherData.latitude}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
+    
+    function WeatherForecast(props) {
+        let [loaded, setLoaded] = useState(false);
+        let [forecast, setForecast] = useState(null)
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        search(city);
+        function handleResponse(response) {
+            setForecast(response.data.daily);
+            setLoaded(true);
+        }
     }
 
-    function handleCityChange(event) {
-        setCity(event.target.value);
-    }
+    if (loaded) {
+        
 
-    if (weatherData.ready) {
         return (
             <div className="html">
                 <div className="container">
@@ -56,7 +61,18 @@ export default function Weather(props) {
             </div>
         );
     } else {
+        console.log(response)
         search();
-        return "Loading..."
+
+        axios.get(apiUrl).then(handleResponse);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search(city);
+    }
+
+    function handleCityChange(event) {
+        setCity(event.target.value);
     }
 }
