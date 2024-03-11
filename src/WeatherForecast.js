@@ -1,7 +1,7 @@
 import React from "react";
+import WeatherForecastData from "./WeatherForecastData";
 
 export default function WeatherForecast(props) {
-
   function maxTemperature() {
     let temperatureMax = Math.round(props.data[0].temperature.maximum);
     return `${temperatureMax}°C`;
@@ -20,21 +20,18 @@ export default function WeatherForecast(props) {
     return days[day];
   }
 
-  return (
-    <div className="forecast">
-      <div className="row">
-        <div className="col">
-          <h4 className="forecast-day">{forecastDay()}</h4>
-          <img
-            src={props.data[0].condition.icon_url}
-            alt={props.data[0].condition.description}
-          />
-          <h4 className="forecast-temperatures">
-            <span className="temperature-maximum">{maxTemperature()}</span>
-            <span className="temperature-minimum">{minTemperature()}</span>
-          </h4>
+    return (
+        <div className="forecast">
+            <div className="row">
+                <div className="col">
+                    <div className="forecast-day">{forecastDay()}</div>
+                    <img src={props.data[0].condition.icon_url} alt={props.data[0].condition.description} />
+                    <h4 className="forecast-temperatures">
+                        <span className="temperature-maximum">{maxTemperature()}</span>
+                        <span className="temperature-minimum">{minTemperature()}</span>
+                    </h4>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
