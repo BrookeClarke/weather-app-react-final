@@ -11,17 +11,17 @@ export default function Weather(props) {
     function handleResponse(response) {
         console.log(response.data);
         setWeatherData({
-            ready: true,
-            city: response.data.city,
-            date: new Date(response.data.daily[0].time * 1000),
-            temperature: response.data.daily[0].temperature.day,
-            description: response.data.daily[0].condition.description,
-            humidity: response.data.daily[0].temperature.humidity,
-            wind: response.data.daily[0].wind.speed,
-            iconUrl: response.data.daily[0].condition.icon_url,
-            coordinates:response.data.coordinates,
-        })
-    }
+          ready: true,
+          city: response.data.city,
+          date: new Date(response.data.daily[0].time * 1000),
+          temperature: response.data.daily[0].temperature.day,
+          description: response.data.daily[0].condition.description,
+          humidity: response.data.daily[0].temperature.humidity,
+          wind: response.data.daily[0].wind.speed,
+          iconUrl: response.data.daily[0].condition.icon_url,
+          daily: response.data.daily,
+        });
+      }
 
     function search() {
         const apiKey = "0f605ca33b8d413fa995ab3t060267od";
@@ -50,7 +50,7 @@ export default function Weather(props) {
                         </form>
                     </div>
                     <WeatherInfo data={weatherData} />
-                    <WeatherForecast data={weatherData.coordinates} />
+                    <WeatherForecast data={weatherData.daily} />
                 </div>
             </div>
         );
