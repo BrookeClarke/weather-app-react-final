@@ -15,15 +15,12 @@ h1 {
     text-align: center;
 }
 
-.searchbutton {
-    text-shadow: 2px 7px 14px rgba(70, 68, 68, 0.5);
-}
-
 .city-search {
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
     font-size: 18px;
+    box-shadow: 6px 8px 47px rgba(0, 0, 0, 0.2);
 }
 
 .search-submit {
@@ -35,6 +32,7 @@ h1 {
     padding-left: 18px;
     font-size: 18px;
     background-color: #0D72E7;
+    box-shadow: 15px 10px 47px rgba(0, 0, 0, 0.2);
 }
 
 .search-submit:hover {
@@ -48,6 +46,7 @@ h1 {
     background-color: #0D72E7;
     cursor: pointer;
     text-decoration: underline;
+    box-shadow: 15px 10px 47px rgba(0, 0, 0, 0.2);
 }
 
 .weather {
