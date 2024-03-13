@@ -15,6 +15,10 @@ h1 {
     text-align: center;
 }
 
+.searchbutton {
+    text-shadow: 2px 7px 14px rgba(70, 68, 68, 0.5);
+}
+
 .city-search {
     border: 1px solid black;
     border-radius: 5px;
