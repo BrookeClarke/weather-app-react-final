@@ -18,16 +18,32 @@ h1 {
 .city-search {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     font-size: 18px;
 }
 
 .search-submit {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 18px;
+    padding-left: 18px;
     font-size: 18px;
-    background-color: rgb(24, 89, 220);
+    background-color: #0D72E7;
+}
+
+.search-submit:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 18px;
+    background-color: #0D72E7;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .weather {
