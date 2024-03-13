@@ -1,11 +1,14 @@
 h1 {
+    margin: 20px auto;
+    font-family: Times;
+    color: #0E1514;
     text-align: center;
-    margin: 15px;
-    color: #292929;;
 }
 
-.html {
-    color: #292929;
+.html-container {
+    margin: 20px auto;
+    font-family: Times;
+    color: #0E1514;
 }
 
 .search {
