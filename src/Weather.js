@@ -12,7 +12,15 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       city: response.data.city,
-      date: new Date(response.data.daily[0].time * 1000),
+      // date: new Date(response.data.daily[0].time * 1000),
+      // The "response.data.daily[0].time * 1000": Gonna pick a specific time
+      // Which is constant, won't change...
+      // new Date() basically pick the current time, but you pass the timestamp
+      // Which is also a date but it's converted as whole numbers, which what you were doing
+      // Now: even this new Date() is correct but I am not gonna use it here
+      // Because every time, I need to update my date so I need pass it again 
+      // date: new Date(), // that's the correct
+
       temperature: response.data.daily[0].temperature.day,
       description: response.data.daily[0].condition.description,
       humidity: response.data.daily[0].temperature.humidity,
