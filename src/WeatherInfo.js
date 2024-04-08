@@ -6,7 +6,7 @@ import "./App.css";
 export default function WeatherInfo(props) {
     return (
         <div className="WeatherInfo">
-            <FormattedDate />
+            <FormattedDate date={props.data.date} />
                 <ul>
                     <li>{props.data.city}</li>
                     <li className="text-capitalize">{props.data.description}</li>
