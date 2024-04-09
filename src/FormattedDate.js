@@ -3,10 +3,9 @@ import React, {useState} from "react";
 export default function FormattedDate() {
     const [date, setDate] = useState(new Date());
 
-    setInterval(function() {
+    setInterval(function () {
         setDate(new Date());
     }, 1000);
-
 
     let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let day = days[date.getDay()];
