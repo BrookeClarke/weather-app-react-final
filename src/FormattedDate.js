@@ -7,7 +7,7 @@ export default function FormattedDate() {
         setDate(new Date());
     }, 1000);
 
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
     let hours = date.getHours();
     if (hours < 10) {
@@ -30,8 +30,8 @@ export default function FormattedDate() {
 
 
     return (
-    <div>
-        {day} {month} {hours}:{minutes} {seconds} {year}
-    </div >
+        <div>
+            {day} {month} {hours}:{minutes} {year}
+        </div >
     )
 }
