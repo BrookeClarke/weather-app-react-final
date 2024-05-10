@@ -49,14 +49,14 @@ export default function Weather(props) {
               <input className="search-submit" type="submit" value="search" />
             </form>
           </div>
-          <WeatherInfo data={weatherData} />
+          <WeatherInfo unit={unit} setUnit={setUnit} data={weatherData} />
           <div className="WeatherForecast">
             <div className="row">
               {weatherData.daily.map(function (dailyForecast, index) {
                 if (index < 8) {
                   return (
                     <div className="col" key={index}>
-                      <WeatherForecast data={dailyForecast} />
+                      <WeatherForecast unit={unit} setUnit={setUnit} data={dailyForecast} />
                     </div>
                   );
                 }
@@ -71,4 +71,4 @@ export default function Weather(props) {
     search();
     return "Loading weather data...";
   }
-}
+} 
