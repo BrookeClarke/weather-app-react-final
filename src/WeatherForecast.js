@@ -9,8 +9,12 @@ export default function WeatherForecast(props) {
     if (unit === 'celsius') {
       return `${temperatureMax}°C`;
     } else {
-      let temperatureMaxFahrenheit = Math.round(props.celsius * 9) / 5 + 32;
-      return '${temperatureMaxFahrenheit}°F';
+      let fahrenheit = (props.celsius * 9) / 5 + 32;
+      return (
+        <div>
+          <span className="temperature-maximum">{maxTemperature(fahrenheit)}</span>
+        </div>
+      )
     }
   }
 
@@ -20,8 +24,12 @@ export default function WeatherForecast(props) {
       if (unit === 'celsius') {
         return `${temperatureMin}°C`;
       } else {
-      let temperatureMinFahrenheit = Math.round(props.celsius * 9) / 5 + 32;
-      return '${temperatureMinFahrenheit}°F';
+        let fahrenheit = (props.celsius * 9) / 5 + 32;
+        return (
+          <div>
+            <span className="temperature-minimum">{minTemperature(fahrenheit)}</span>
+          </div>
+        );
     }
   }
 
