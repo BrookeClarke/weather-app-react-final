@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import "./App.css";
 
 export default function FormattedDate() {
     const [date, setDate] = useState(new Date());
@@ -9,6 +10,7 @@ export default function FormattedDate() {
 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
+    
     let hours = date.getHours();
     if (hours < 10) {
         hours = `0${hours}`;
@@ -30,8 +32,9 @@ export default function FormattedDate() {
 
 
     return (
-        <div>
-            {day} {month} {hours}:{minutes} {year}
+        <div className="formalDate">
+            {day}, {month} {year} | {hours}:{minutes}
         </div >
     )
 }
+
