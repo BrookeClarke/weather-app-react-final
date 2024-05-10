@@ -71,8 +71,8 @@ export default function WeatherForecast(props) {
               alt={props.data.condition.description}
             />
             <h4 className="forecast-temperatures">
-              <span className="temperature-maximum">{maxTemperature()}</span>
-              <span className="temperature-minimum">{minTemperature()}</span>
+              <span className="temperature-maximum">{maxTemperature(fahrenheit)}</span>
+              <span className="temperature-minimum">{minTemperature(fahrenheit)}</span>
             </h4>
           </div>
         </div>
