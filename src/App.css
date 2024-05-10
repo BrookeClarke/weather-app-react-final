@@ -3,6 +3,7 @@ h1 {
     font-family: Times;
     color: #0E1514;
     text-align: center;
+    font-weight: 600;
 }
 
 .html-container {
@@ -74,16 +75,19 @@ ul {
 .temperature-maximum {
     opacity: 0.8;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .temperature-minimum {
     opacity: 0.6;
     margin-left: 8px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .forecast-day {
     font-size: 18px;
+    font-weight: 600;
 }
 
 .formalDate {
