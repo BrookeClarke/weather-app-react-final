@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherForecast(props) {
   const [unit, setUnit] = useState('celsius')
@@ -32,16 +31,6 @@ export default function WeatherForecast(props) {
     let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 
     return days[day];
-  }
-
-  function convertToFahrenheit(event) {
-    event.preventDefault();
-    setUnit("fahrenheit");
-  }
-  
-  function convertToCelsius(event) {
-    event.preventDefault();
-    setUnit("celsius");
   }
 
   if (unit === 'celsius') {
