@@ -6,12 +6,6 @@ h1 {
     font-weight: 600;
 }
 
-.html-container {
-    margin: 20px auto;
-    font-family: Times;
-    color: #0E1514;
-}
-
 .search {
     text-align: center;
 }
@@ -57,11 +51,19 @@ h1 {
 
 }
 
-.container {
+.col-9 {
+    display: grid;
     background-color: #c0cab4;
-    color: #292929;
+    border: 2px solid gray;
+    border-radius: 15px;
+    color: #0E1514;
+}
+
+.col-3 {
+    display: grid;
     border: 1px solid gray;
     border-radius: 15px;
+    color: #0E1514;
 }
 
 ul {

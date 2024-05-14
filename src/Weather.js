@@ -40,8 +40,8 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="html">
-        <div className="container">
+      <div className="row">
+        <div className="col-9">
           <h1>Todays Weather</h1>
           <div className="search">
             <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
@@ -65,6 +65,12 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
+        <span className="col-3">
+        <ul className="humidity-and-wind">
+            <li className="humidity">Humidity:%</li>
+            <li className="wind">Wind:m/s</li>
+        </ul>
+            </span>
       </div>
     );
   } else {
