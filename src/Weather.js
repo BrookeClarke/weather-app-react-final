@@ -40,6 +40,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
+      <div className="return">
       <div className="row">
         <div className="col-9">
           <h1>Todays Weather</h1>
@@ -66,11 +67,12 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="col-3">
-                        <span className="humidity-and-wind">
-                            <div className="humidity">Humidity: {weatherData.Humidity}%</div>
-                            <div className="wind">Wind: {weatherData.Wind}m/s</div>
-                        </span>
-                    </div>
+          <span className="humidity-and-wind">
+            <div className="humidity">Humidity: {weatherData.Humidity}%</div>
+            <div className="wind">Wind: {weatherData.Wind}m/s</div>
+            </span>
+          </div>
+        </div>
       </div>
     );
   } else {
