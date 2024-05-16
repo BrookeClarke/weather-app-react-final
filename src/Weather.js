@@ -65,12 +65,12 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
-        <span className="col-3">
-        <ul className="humidity-and-wind">
-            <li className="humidity">Humidity:%</li>
-            <li className="wind">Wind:m/s</li>
-        </ul>
-            </span>
+        <div className="col-3">
+                        <span className="humidity-and-wind">
+                            <div className="humidity">Humidity: {weatherData.Humidity}%</div>
+                            <div className="wind">Wind: {weatherData.Wind}m/s</div>
+                        </span>
+                    </div>
       </div>
     );
   } else {
