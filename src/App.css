@@ -58,20 +58,21 @@ h1 {
 
 }
 
-.col-9 {
+.current-weather {
     display: grid;
     background-color: #c0cab4;
     border: 2px solid gray;
     border-radius: 15px;
     color: #0E1514;
     background: linear-gradient(
-          to right,
-          rgb(172, 89, 223),
-          rgb(242, 200, 95)
+        to right,
+        rgb(172, 89, 223),
+        rgb(242, 200, 95)
         );
+        max-width: 900px;
 }
 
-.col-3 {
+.forecast-weather {
     display: grid;
     color: #0E1514;
 }
@@ -132,7 +133,15 @@ ul {
     font-weight: 600;
 }
 
-@media (max-width: 1290px) {
+.grid-5-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-2-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1024px) {
     .html-container {
         margin: 10px;
         font-weight: 600;
@@ -190,23 +199,21 @@ ul {
         background-color: #F8CB7F;
         display: block;
         margin: 15px auto;
-    
     }
     
-    .col-9 {
+    .current-weather {
         display: grid;
         background-color: #c0cab4;
         border: 2px solid gray;
         border-radius: 15px;
         color: #0E1514;
         background: linear-gradient(
-              to right,
-              rgb(172, 89, 223),
-              rgb(242, 200, 95)
+            to right,
+            rgb(172, 89, 223),
             );
     }
     
-    .col-3 {
+    .forecast-weather{
         display: grid;
         color: #0E1514;
     }
@@ -239,16 +246,16 @@ ul {
         list-style: none;
     }
     
-    .forecast {
-        text-align: center;
-    }
-    
     .temperature-maximum {
         opacity: 0.8;
         font-size: 9px;
         font-weight: 600;
     }
-    
+
+    .forecast {
+        text-align: center;
+    }
+
     .temperature-minimum {
         opacity: 0.6;
         margin-left: 8px;
@@ -265,5 +272,8 @@ ul {
         text-align: center;
         font-size: 9px;
         font-weight: 600;
+    }
+    .grid-5-columns {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
