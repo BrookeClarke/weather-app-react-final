@@ -12,7 +12,7 @@ export default function WeatherInfo(props) {
                 <li className="text-capitalize">{props.data.description}</li>
             </ul>
             <div className="row">
-                <div className="grid-5-columns">
+                <div className="col-3">
                     <img src={props.data.iconUrl} alt={props.data.description} />
                     <div className="temperature">
                         <WeatherTemperature celsius={props.data.temperature} unit={props.unit} setUnit={props.setUnit} />

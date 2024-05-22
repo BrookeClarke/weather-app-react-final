@@ -33,7 +33,7 @@ export default function WeatherForecast(props) {
   return (
     <div className="forecast">
       <div className="row">
-        <div className="grid-5-columns">
+        <div className="col-9">
           <h4 className="forecast-day">{forecastDay()}</h4>
           <img
             src={props.data.condition.icon_url}

@@ -133,7 +133,7 @@ ul {
     font-weight: 600;
 }
 
-.grid-5-columns {
+.grid-3-columns {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -274,7 +274,11 @@ ul {
         font-size: 9px;
         font-weight: 600;
     }
-    .grid-5-columns {
+    .grid-3-columns {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .grid-2-columns {
+        grid-template-columns: 1fr 1fr;
     }
 }
