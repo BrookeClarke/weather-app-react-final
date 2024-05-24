@@ -146,10 +146,6 @@ ul {
     grid-template-columns: 2fr;
 }
 
-.grid-1-column {
-    grid-template-columns: 1fr;
-}
-
 @media (max-width: 900px) {
     .html-container {
         margin: 10px;
