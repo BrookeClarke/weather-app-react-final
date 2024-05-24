@@ -41,17 +41,18 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="return">
-      <div className="grid grid-7-columns">
-        <div className="grid grid-7-columns current-weather">
+        <div className="grid grid-7-columns">
+          <div className="grid grid-7-columns current-weather">
             <h1>Todays Weather</h1>
             <div className="search">
               <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
                 <input className="city-search" onChange={handleCityChange} type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
                 <input className="search-submit" type="submit" value="search" />
-            </form></div>
-          <WeatherInfo unit={unit} setUnit={setUnit} data={weatherData} />
-          <div className="WeatherForecast">
-              <div className="row">
+              </form>
+            </div>
+            <WeatherInfo unit={unit} setUnit={setUnit} data={weatherData} />
+            <div className="WeatherForecast">
+            <div className="row">
               {weatherData.daily.map(function (dailyForecast, index) {
                 if (index < 8) {
                   return (
@@ -62,8 +63,8 @@ export default function Weather(props) {
                 }
                 return null;
               })}
+              </div>
             </div>
-          </div>
           </div>
           <div className="forecast-weather">
           <span className="grid grid-2-columns humidity-and-wind">
@@ -71,7 +72,7 @@ export default function Weather(props) {
             <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
             </span>
           </div>
-          </div>
+        </div>
       </div>
     );
   } else {
