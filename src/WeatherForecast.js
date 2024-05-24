@@ -32,13 +32,10 @@ export default function WeatherForecast(props) {
 
   return (
     <div className="forecast">
-      <div className="grid">
-        <div className="col-9">
+      <div className="row">
+        <div className="col">
           <h4 className="forecast-day">{forecastDay()}</h4>
-          <img
-            src={props.data.condition.icon_url}
-            alt={props.data.condition.description}
-          />
+          <img src={props.data.condition.icon_url} alt={props.data.condition.description} />
           <h4 className="forecast-temperatures">
             <span className="temperature-maximum">{maxTemperature()}</span>
             <span className="temperature-minimum">{minTemperature()}</span>
