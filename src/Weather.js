@@ -41,15 +41,14 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="return">
-      <div className="grid grid-5-columns">
-        <div className="grid grid-5-columns current-weather">
-          <h1>Todays Weather</h1>
-          <div className="search">
-            <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
-              <input className="city-search" onChange={handleCityChange} type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
-              <input className="search-submit" type="submit" value="search" />
-            </form>
-          </div>
+      <div className="grid grid-7-columns">
+        <div className="grid grid-7-columns current-weather">
+            <h1>Todays Weather</h1>
+            <div className="search">
+              <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
+                <input className="city-search" onChange={handleCityChange} type="search" placeholder="Enter a place..." autoComplete="off" autoFocus="on" />
+                <input className="search-submit" type="submit" value="search" />
+            </form></div>
           <WeatherInfo unit={unit} setUnit={setUnit} data={weatherData} />
           <div className="WeatherForecast">
               <div className="row">
@@ -57,22 +56,22 @@ export default function Weather(props) {
                 if (index < 8) {
                   return (
                     <div className="col" key={index}>
-                      <WeatherForecast unit={unit} setUnit={setUnit} data={dailyForecast} />
-                    </div>
+                    <WeatherForecast unit={unit} setUnit={setUnit} data={dailyForecast} />
+                  </div>
                   );
                 }
                 return null;
               })}
             </div>
           </div>
-        </div>
-        <div className="grid grid-2-columns forecast-weather">
-          <span className="humidity-and-wind">
+          </div>
+          <div className="forecast-weather">
+          <span className="grid grid-2-columns humidity-and-wind">
             <div className="humidity">Humidity: {weatherData.humidity}%</div>
             <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
             </span>
           </div>
-        </div>
+          </div>
       </div>
     );
   } else {

@@ -62,7 +62,6 @@ h1 {
 }
 
 .current-weather {
-    display: grid;
     background-color: #c0cab4;
     border: 2px solid gray;
     border-radius: 15px;
@@ -75,7 +74,6 @@ h1 {
 }
 
 .forecast-weather {
-    display: grid;
     color: #0E1514;
 }
 
@@ -135,15 +133,24 @@ ul {
     font-weight: 600;
 }
 
-.grid-3-columns {
-    grid-template-columns: 1fr 1fr 1fr;
+.grid {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.grid-7-columns {
+    grid-template-columns: 7fr;
 }
 
 .grid-2-columns {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr;
 }
 
-@media (max-width: 1024px) {
+.grid-1-column {
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
     .html-container {
         margin: 10px;
         font-weight: 600;
@@ -204,7 +211,6 @@ ul {
     }
     
     .current-weather {
-        display: grid;
         background-color: #c0cab4;
         border: 2px solid gray;
         border-radius: 15px;
@@ -217,7 +223,6 @@ ul {
     }
     
     .forecast-weather{
-        display: grid;
         color: #0E1514;
     }
     
@@ -276,8 +281,8 @@ ul {
         font-size: 9px;
         font-weight: 600;
     }
-    .grid-3-columns {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .grid-7-columns {
+        grid-template-columns: 7fr;
     }
 
     .grid-2-columns {
