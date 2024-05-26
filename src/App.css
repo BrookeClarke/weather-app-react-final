@@ -58,7 +58,6 @@ h1 {
     background-color: #F8CB7F;
     display: block;
     margin: 30px auto;
-
 }
 
 .current-weather {
@@ -66,15 +65,13 @@ h1 {
     border: 2px solid gray;
     border-radius: 15px;
     color: #0E1514;
-    background: linear-gradient(
-        to right,
-        rgb(172, 89, 223),
-        rgb(242, 200, 95)
-        );
+    width: 75%;
+    background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
 }
 
 .forecast-weather {
     color: #0E1514;
+    width: 25%;
 }
 
 .humidity {
@@ -82,11 +79,7 @@ h1 {
     border-radius: 15px;
     margin: 10px auto;
     padding: 20px;
-    background: linear-gradient(
-          to right,
-          rgb(172, 89, 223),
-          rgb(242, 200, 95)
-        );
+    background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
 }
 
 .wind {
@@ -133,6 +126,9 @@ ul {
     font-weight: 600;
 }
 
-@media (max-width: 1024px) {
-    
-}
+@media only screen and (max-width: 768px) {
+    .current-weather,
+    .forecast-weather {
+        width: 100%;
+    }
+} 
