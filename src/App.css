@@ -47,7 +47,8 @@ h1 {
     padding-right: 18px;
     padding-left: 18px;
     font-size: 18px;
-    background-color: #2f85e7;
+    background-color: #0D72E7;
+    opacity: 0.8;
     cursor: pointer;
     text-decoration: underline;
     box-shadow: 15px 10px 47px rgba(0, 0, 0, 0.2);
@@ -65,12 +66,18 @@ h1 {
     border: 2px solid gray;
     border-radius: 15px;
     color: #0E1514;
-    width: 75%;
     background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
+}
+
+.col-9 {
+    width: 75%;
 }
 
 .forecast-weather {
     color: #0E1514;
+}
+
+.col-3 {
     width: 25%;
 }
 
@@ -127,8 +134,8 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
-    .current-weather,
-    .forecast-weather {
+    .col-9,
+    .col-3 {
         width: 100%;
     }
 } 
