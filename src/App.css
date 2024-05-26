@@ -69,16 +69,8 @@ h1 {
     background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
 }
 
-.col-9 {
-    width: 75%;
-}
-
 .forecast-weather {
     color: #0E1514;
-}
-
-.col-3 {
-    width: 25%;
 }
 
 .humidity {
@@ -132,10 +124,3 @@ ul {
     font-size: 18px;
     font-weight: 600;
 }
-
-@media only screen and (max-width: 768px) {
-    .col-9,
-    .col-3 {
-        width: 100%;
-    }
-} 
