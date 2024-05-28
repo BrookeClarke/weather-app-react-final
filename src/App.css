@@ -67,10 +67,12 @@ h1 {
     border-radius: 15px;
     color: #0E1514;
     background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
+    display: flexbox;
 }
 
 .forecast-weather {
     color: #0E1514;
+    display: flexbox;
 }
 
 .humidity {
@@ -123,4 +125,14 @@ ul {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .current-weather {
+        columns: 12;
+    }
+    
+    .forecast-weather {
+        columns: 12;
+    }
 }

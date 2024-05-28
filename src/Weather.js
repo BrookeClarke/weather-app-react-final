@@ -42,7 +42,7 @@ export default function Weather(props) {
     return (
       <div className="return">
         <div className="row">
-          <div className="col-md-9 current-weather">
+          <div className="col-9 current-weather">
             <h1>Todays Weather</h1>
             <div className="search">
               <form onSubmit={handleSubmit} className="searchbutton" id="search-form">
@@ -52,11 +52,11 @@ export default function Weather(props) {
             </div>
             <WeatherInfo unit={unit} setUnit={setUnit} data={weatherData} />
             <div className="WeatherForecast">
-            <div className="row align-items-start">
+            <div className="row">
               {weatherData.daily.map(function (dailyForecast, index) {
                 if (index < 8) {
                   return (
-                    <div className="col-md-1" key={index}>
+                    <div className="col order-5" key={index}>
                     <WeatherForecast unit={unit} setUnit={setUnit} data={dailyForecast} />
                   </div>
                   );
@@ -66,13 +66,11 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-          <div className="row forecast-weather">
-            <div className="col-md-2">
+          <div className="col-2 order-1 forecast-weather">
               <span className="humidity-and-wind">
                 <div className="humidity">Humidity: {weatherData.humidity}%</div>
                 <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
               </span>
-            </div>
           </div>
         </div>
       </div>
