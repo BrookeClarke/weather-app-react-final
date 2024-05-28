@@ -56,7 +56,7 @@ export default function Weather(props) {
               {weatherData.daily.map(function (dailyForecast, index) {
                 if (index < 8) {
                   return (
-                    <div className="col order-5" key={index}>
+                    <div className="col" key={index}>
                     <WeatherForecast unit={unit} setUnit={setUnit} data={dailyForecast} />
                   </div>
                   );
@@ -66,7 +66,7 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-          <div className="col-2 order-1 forecast-weather">
+          <div className="col-3 forecast-weather">
               <span className="humidity-and-wind">
                 <div className="humidity">Humidity: {weatherData.humidity}%</div>
                 <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
