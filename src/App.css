@@ -126,13 +126,3 @@ ul {
 footer {
     font-family: 'Gill Sans';
 }
-
-@media (max-width: 900px) {
-    .current-weather {
-        columns: 12;
-    }
-    
-    .forecast-weather {
-        columns: 12;
-    }
-}
