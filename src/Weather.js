@@ -20,7 +20,7 @@ export default function Weather(props) {
       wind: response.data.daily[0].wind,
       iconUrl: response.data.daily[0].condition.icon_url,
       daily: response.data.daily,
-      roadTemperature: response.data.main.road.temp,
+      roadTemperature: response.data.road.temp,
     });
 
 
