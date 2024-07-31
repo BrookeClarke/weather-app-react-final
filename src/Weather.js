@@ -20,6 +20,7 @@ export default function Weather(props) {
       wind: response.data.daily[0].wind,
       iconUrl: response.data.daily[0].condition.icon_url,
       daily: response.data.daily,
+      roadTemperature: response.data.daily.periods.roadSurface.tempC,
     });
   }
 
@@ -27,6 +28,10 @@ export default function Weather(props) {
     const apiKey = "0f605ca33b8d413fa995ab3t060267od";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
+
+    let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+    let roadApiUrl = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApiKey}`;
+    axios.get(roadApiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {
@@ -68,11 +73,12 @@ export default function Weather(props) {
           </div>
           <div className="col-4 forecast-weather">
             <span className="humidity-and-wind">
-                <div className="humidity">Humidity: {weatherData.humidity}%</div>
-                <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
-              </span>
+              <div className="humidity">Humidity: {weatherData.humidity}%</div>
+              <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
+            </span>
           </div>
         </div>
+        <div className="road-temperature">Road Temperature</div>
       </div>
     );
   } else {

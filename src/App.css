@@ -92,6 +92,14 @@ h1 {
         );
 }
 
+.road-temperature {
+    border: 2px solid gray;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding: 20px;
+    background: linear-gradient(to right, rgb(172, 89, 223), rgb(242, 200, 95));
+}
+
 ul {
     list-style: none;
 }
