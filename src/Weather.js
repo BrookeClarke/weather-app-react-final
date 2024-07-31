@@ -20,18 +20,18 @@ export default function Weather(props) {
       wind: response.data.daily[0].wind,
       iconUrl: response.data.daily[0].condition.icon_url,
       daily: response.data.daily,
-      roadTemperature: response.data.daily.periods.roadSurface.tempC,
+      roadTemperature: response.data.road.temp,
     });
-  }
+
 
   function search() {
     const apiKey = "0f605ca33b8d413fa995ab3t060267od";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-    let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-    let roadApiUrl = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApiKey}`;
-    axios.get(roadApiUrl).then(handleResponse);
+    let roadApi = "1fd8093fa5ff12d796d7de756cc9d6b9";
+    let roadApiKey = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApi}`;
+    axios.get(roadApiKey).then(handleResponse);
   }
 
   function handleSubmit(event) {
