@@ -7,7 +7,7 @@ import WeatherForecast from "./WeatherForecast";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [unit, setUnit] = useState('celsius')
+  const [unit, setUnit] = useState('celsius');
 
   function handleResponse(response) {
     setWeatherData({
@@ -22,7 +22,7 @@ export default function Weather(props) {
       daily: response.data.daily,
       lon: response.data.coordinates.longitude,
       lat: response.data.coordinates.latitude,
-      roadTemperature: response.data.road.temp
+      roadTemperature: response.data.road.temp,
     });
   }
 
@@ -34,6 +34,8 @@ export default function Weather(props) {
       let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
       let roadApi = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApiKey}&lon={lon}&lat={lat}&units=metric`;
       axios.get(roadApi).then(handleResponse);
+      const lon = weatherData.lon;
+      const lat = weatherData.lat;
     }
 
     function handleSubmit(event) {
