@@ -20,18 +20,20 @@ export default function Weather(props) {
       wind: response.data.daily[0].wind,
       iconUrl: response.data.daily[0].condition.icon_url,
       daily: response.data.daily,
-      roadTemperature: response.data.road.temp,
+      lon: response.data.coordinates.longitude,
+      lat: response.data.coordinates.latitude,
+      roadTemperature: response.data.road.temp
     });
-
+  }
 
     function search() {
       const apiKey = "0f605ca33b8d413fa995ab3t060267od";
       let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
       axios.get(apiUrl).then(handleResponse);
 
-      let roadApi = "1fd8093fa5ff12d796d7de756cc9d6b9";
-      let roadApiKey = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApi}&units=metric`;
-      axios.get(roadApiKey).then(handleResponse);
+      let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+      let roadApi = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApiKey}&lon={lon}&lat={lat}&units=metric`;
+      axios.get(roadApi).then(handleResponse);
     }
 
     function handleSubmit(event) {
@@ -78,12 +80,11 @@ export default function Weather(props) {
               </span>
             </div>
           </div>
-          <div className="road-temperature">Road Temperature {weatherData.road.temp}</div>
+          <div className="road-temperature">Road Temperature {weatherData.roadTemperature}</div>
         </div>
       );
     } else {
       search();
       return "Loading weather data...";
     }
-  }
   }
