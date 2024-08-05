@@ -84,7 +84,7 @@ export default function Weather(props) {
               </span>
             </div>
           </div>
-          <div className="road-temperature">
+          <div className="roadTemperature">
             Road Temperature {roadWeather}
           </div>
         </div>
