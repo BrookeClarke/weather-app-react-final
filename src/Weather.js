@@ -9,7 +9,14 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState('celsius');
 
-  function handleResponse(response) {
+  function roadWeather(response) {
+    const lon = response.data.coordinates.longitude;
+    const lat = response.data.coordinates.latitude;
+    let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+    let roadApi = `https://api.openweathermap.org/data/2.5/onecall?appid=${roadApiKey}&lon=${lon}&lat=${lat}&units=metric`;
+    axios.get(roadApi).then(handleResponseDaily);
+  }
+  function handleResponseDaily(response) {
     setWeatherData({
       ready: true,
       city: response.data.city,
@@ -29,13 +36,8 @@ export default function Weather(props) {
     function search() {
       const apiKey = "0f605ca33b8d413fa995ab3t060267od";
       let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(handleResponse);
-
-      let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-      let roadApi = `https://api.openweathermap.org/data/2.5/roadrisk?appid=${roadApiKey}&lon={lon}&lat={lat}&units=metric`;
-      axios.get(roadApi).then(handleResponse);
-      const lon = weatherData.lon;
-      const lat = weatherData.lat;
+      axios.get(apiUrl).then(handleResponseDaily);
+     
     }
 
     function handleSubmit(event) {
@@ -82,7 +84,9 @@ export default function Weather(props) {
               </span>
             </div>
           </div>
-          <div className="road-temperature">Road Temperature {weatherData.roadTemperature}</div>
+          <div className="road-temperature">
+            Road Temperature {roadWeather}
+          </div>
         </div>
       );
     } else {
