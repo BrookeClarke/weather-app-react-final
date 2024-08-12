@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import WeatherInfo from "./WeatherInfo";
-import "./App.css";
 
 export default function roadWeather(props) {
     function getRoadTemperature(response) {

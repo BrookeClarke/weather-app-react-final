@@ -101,7 +101,7 @@ export default function Weather(props) {
             </div>
           </div>
           <div className="roadTemperature">
-            <RoadWeather unit={unit} setUnit={setUnit} data={dailyForecast} />
+            <RoadWeather />
           </div>
         </div>
       );
