@@ -3,6 +3,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import "./App.css";
 import WeatherForecast from "./WeatherForecast";
+import RoadWeather from "./RoadWeather";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -31,6 +32,7 @@ export default function Weather(props) {
     let roadApi = `https://api.openweathermap.org/data/2.5/onecall?appid=${roadApiKey}&lon=${lon}&lat=${lat}&units=metric`;
     axios.get(roadApi).then(displayRoadForecast);
   }
+  
   function handleResponseDaily(response) {
     setWeatherData({
       ready: true,
@@ -98,7 +100,9 @@ export default function Weather(props) {
               </span>
             </div>
           </div>
-          <div className="roadTemperature">{roadWeather}</div>
+          <div className="roadTemperature">
+            <RoadWeather unit={unit} setUnit={setUnit} data={dailyForecast} />
+          </div>
         </div>
       );
     } else {
