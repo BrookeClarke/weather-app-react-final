@@ -12,7 +12,7 @@ export default function Weather(props) {
   function roadWeather(response) {
     const lon = response.data.coordinates.longitude;
     const lat = response.data.coordinates.latitude;
-    let roadApiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+    let roadApiKey = "cd876a10c23602b6fbd5ba8f87584931";
     let roadApi = `https://api.openweathermap.org/data/2.5/onecall?appid=${roadApiKey}&lon=${lon}&lat=${lat}&units=metric`;
     axios.get(roadApi).then(handleResponseDaily);
   }
