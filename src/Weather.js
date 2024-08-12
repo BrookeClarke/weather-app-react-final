@@ -32,7 +32,7 @@ export default function Weather(props) {
     let roadApi = `https://api.openweathermap.org/data/2.5/onecall?appid=${roadApiKey}&lon=${lon}&lat=${lat}&units=metric`;
     axios.get(roadApi).then(displayRoadForecast);
   }
-  
+
   function handleResponseDaily(response) {
     setWeatherData({
       ready: true,
