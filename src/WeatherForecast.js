@@ -5,7 +5,7 @@ export default function WeatherForecast(props) {
   function maxTemperature() {
     let temperatureMax = Math.round(props.data.temperature.maximum);
     
-    if(props.unit === "fahrenheit") {
+    if (props.unit === "fahrenheit") {
       temperatureMax = (temperatureMax * 9) / 5 + 32;
       return `${temperatureMax}°F`
     }
@@ -15,7 +15,7 @@ export default function WeatherForecast(props) {
   function minTemperature() {
     let temperatureMin = Math.round(props.data.temperature.minimum);
 
-    if(props.unit === "fahrenheit") {
+    if (props.unit === "fahrenheit") {
       temperatureMin = (temperatureMin * 9) / 5 + 32;
       return `${temperatureMin}°F`
     }
