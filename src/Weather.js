@@ -10,29 +10,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState('celsius');
 
-  function displayRoadForecast(response) {
-    let roadTemperature = response.data.road.temp;
-    <div className="row">
-    {weatherData.daily.map(function (dailyForecast, index) {
-      if (index < 8) {
-        return (
-          <div className="col" key={index}>
-            <roadTemperature unit={unit} setUnit={setUnit} data={dailyForecast} />
-          </div>
-        );
-      }
-      return null;
-    })}
-  </div>
-  }
-  function roadWeather(response) {
-    const lon = response.data.coordinates.longitude;
-    const lat = response.data.coordinates.latitude;
-    let roadApiKey = "cd876a10c23602b6fbd5ba8f87584931";
-    let roadApi = `https://api.openweathermap.org/data/2.5/onecall?appid=${roadApiKey}&lon=${lon}&lat=${lat}&units=metric`;
-    axios.get(roadApi).then(getRoadTemperature);
-  }
-
   function handleResponseDaily(response) {
     setWeatherData({
       ready: true,
