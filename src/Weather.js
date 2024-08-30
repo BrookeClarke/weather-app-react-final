@@ -3,7 +3,6 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import "./App.css";
 import WeatherForecast from "./WeatherForecast";
-import RoadWeather from "./RoadWeather";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -76,9 +75,6 @@ export default function Weather(props) {
                 <div className="wind">Wind: {weatherData.wind.speed}m/s</div>
               </span>
             </div>
-          </div>
-          <div className="roadTemperature">
-            <RoadWeather />
           </div>
         </div>
       );
